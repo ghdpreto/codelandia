@@ -1,32 +1,40 @@
 :root {
-    --blue: #574AE8;
-    --grey-light: #F3F5F7;
-    --white: #FFFFFF;
+  --blue: #574ae8;
+  --grey-light: #f3f5f7;
+  --white: #ffffff;
+  --white-light: rgba(255,255,255, .3);
 
-    --title-dark: #313131;
-    --text-light: #B6B6B6;
-    --gradient-color:  rgba(87,74,232,1) 0%, rgba(9,9,121,1) 0%, rgba(62,161,219,1) 100%;
+  --title-dark: #313131;
+  --text-light: #b6b6b6;
+  --gradient-color:  #574AE8 0%, #3EA1DB 100%;
+
 }
 
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    /* 1rem = 10 px */
-    font-size: 62.5%;
+  /* 1rem = 10 px */
+  font-size: 62.5%;
 }
 
-body {
-    font-size: 1rem;
-    font-family: 'Inter', sans-serif;
-    color: var(--grey);
+body, input {
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  color: var(--grey);
 }
 
-h1, h2 {
-    font-family: 'Lexend Deca', sans-serif;
-    font-size: 1rem;
+h1,
+h2 {
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  color: var(--white);
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 90rem;
 }
