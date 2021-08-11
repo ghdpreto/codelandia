@@ -1,0 +1,32 @@
+:root {
+    --blue: #574AE8;
+    --grey-light: #F3F5F7;
+    --white: #FFFFFF;
+
+    --title-dark: #313131;
+    --text-light: #B6B6B6;
+    --gradient-color:  rgba(87,74,232,1) 0%, rgba(9,9,121,1) 0%, rgba(62,161,219,1) 100%;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* 1rem = 10 px */
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    color: var(--grey);
+}
+
+h1, h2 {
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 1rem;
+}
