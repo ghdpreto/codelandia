@@ -1,13 +1,14 @@
 :root {
   --blue: #574ae8;
   --grey-light: #f3f5f7;
+  --grey-medium: #e5e5e5;
   --white: #ffffff;
-  --white-light: rgba(255,255,255, .3);
+  --white-light: rgba(255, 255, 255, 0.3);
 
   --title-dark: #313131;
   --text-light: #b6b6b6;
-  --gradient-color:  #574AE8 0%, #3EA1DB 100%;
-
+  --gradient-color: #574ae8 0%, #3ea1db 100%;
+  --shadown-dark: rgba(49, 49, 49, 0.4);
 }
 
 * {
@@ -21,10 +22,12 @@ html {
   font-size: 62.5%;
 }
 
-body, input {
+body,
+input {
   font-size: 1rem;
   font-family: "Inter", sans-serif;
   color: var(--grey);
+  background-color: var(--grey-medium);
 }
 
 h1,
