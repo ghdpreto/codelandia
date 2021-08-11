@@ -41,4 +41,5 @@ h2 {
   margin: 0 auto;
   width: 90%;
   max-width: 90rem;
+  position: relative;
 }
