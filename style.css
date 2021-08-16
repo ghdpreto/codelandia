@@ -115,3 +115,17 @@
   line-height: 3.2rem;
   text-align: justify;
 }
+
+.c-footer {
+  min-height: 8rem;
+  background-image: linear-gradient(90deg, var(--gradient-color));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.c-footer__content {
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--white);
+}
