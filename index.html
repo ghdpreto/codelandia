@@ -41,7 +41,7 @@
             placeholder="Pesquisar no blog"
           />
         </div>
-        <div class="c-add"></div>
+        <div class="c-add" data-js="btnOpenModal"></div>
       </div>
     </header>
 
@@ -76,9 +76,9 @@
       </div>
     </footer>
 
-    <div class="c-modal">
+    <div class="c-modal" data-js="modal">
       <div class="c-modal__form container">
-        <div class="c-modal__close"></div>
+        <div class="c-modal__close" data-js="btnCloseModal"></div>
         <h2 class="c-modal__title">Adicionar um novo conteudo</h2>
         <form action="">
           <div class="c-modal__group">
@@ -113,5 +113,6 @@
         </form>
       </div>
     </div>
+    <script src="./js/script.js"></script>
   </body>
 </html>
