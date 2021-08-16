@@ -75,5 +75,43 @@
         </section>
       </div>
     </footer>
+
+    <div class="c-modal">
+      <div class="c-modal__form container">
+        <div class="c-modal__close"></div>
+        <h2 class="c-modal__title">Adicionar um novo conteudo</h2>
+        <form action="">
+          <div class="c-modal__group">
+            <label for="title" class="c-modal__label">Titulo</label>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              placeholder="Título"
+              class="c-input__text c-input__text--black"
+            />
+          </div>
+          <div class="c-modal__group">
+            <label for="date" class="c-modal__label">Data </label>
+            <input
+              type="date"
+              name="date"
+              id="date"
+              class="c-input__text c-input__text--black"
+            />
+          </div>
+          <div class="c-modal__group">
+            <label for="description" class="c-modal__label">Descrição</label>
+            <textarea
+              name="description"
+              id="description"
+              placeholder="Digite um conteudo"
+              class="c-input__text-area"
+            ></textarea>
+          </div>
+          <button class="c-button">Salvar</button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>

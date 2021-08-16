@@ -116,6 +116,7 @@
   text-align: justify;
 }
 
+/* FOOTER */
 .c-footer {
   min-height: 8rem;
   background-image: linear-gradient(90deg, var(--gradient-color));
@@ -128,4 +129,128 @@
   text-align: center;
   font-size: 1.8rem;
   color: var(--white);
+}
+
+/* MODAL */
+
+.c-modal {
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.c-modal__form {
+  border-radius: 0.5rem;
+  padding: 2rem;
+  background-color: var(--white);
+  position: relative;
+}
+
+.c-modal__close {
+  position: absolute;
+  top: -1.8rem;
+  right: -1.8rem;
+  padding: 2.7rem;
+  border-radius: 50%;
+  box-shadow: 0px 0px 1rem var(--shadown-dark);
+  background-color: var(--white);
+  cursor: pointer;
+  background-image: url("./assets/close.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 3rem;
+  transition: 200ms transform;
+}
+
+.c-modal__close:hover {
+  transform: rotate(-90deg) scale(1.1);
+}
+
+.c-modal__title {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 4rem;
+  color: var(--title-dark);
+}
+
+.c-modal__group {
+  margin-bottom: 2rem;
+}
+
+.c-modal__label {
+  display: flex;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: var(--title-dark);
+}
+
+.c-input__text-area {
+  resize: none;
+  border: 0.2rem solid var(--shadown-dark);
+  border-radius: 0.5rem;
+
+  width: 100%;
+  background-color: transparent;
+  outline: none;
+  padding: 1rem;
+  color: var(--text-light);
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+
+  transition: border 200ms;
+}
+
+.c-input__text-area:focus {
+  border: 0.2rem solid var(--title-dark);
+}
+
+.c-input__text {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 1rem;
+  color: var(--white);
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  border: 0.2rem solid transparent;
+  border-radius: 0.5rem;
+
+  transition: border 200ms;
+}
+
+.c-input__text:focus {
+  border: 0.2rem solid var(--white);
+}
+
+.c-input__text--black {
+  color: var(--text-light);
+  border-color: var(--shadown-dark);
+}
+
+.c-input__text--black:focus {
+  border: 0.2rem solid var(--title-dark);
+}
+
+.c-button {
+  background-image: linear-gradient(90deg, var(--gradient-color));
+  padding: 1rem;
+  min-width: 10rem;
+  width: 20rem;
+  border: none;
+  color: var(--white);
+  font-size: 1.8rem;
+  border-radius: 0.5rem;
+  font-weight: bolder;
+}
+
+.c-button:hover {
+  opacity: 0.9;
 }
