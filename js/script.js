@@ -42,6 +42,7 @@ btn.addEventListener("click", (e) => {
 function getLocalStorage() {
   const value = JSON.parse(localStorage.getItem("codelandia"));
   const emptyImg = document.querySelector("[data-js=emptyImg]");
+
   if (!value) {
     emptyImg.classList.add("visible");
   } else {
@@ -49,29 +50,20 @@ function getLocalStorage() {
     emptyImg.parentNode.removeChild(emptyImg);
 
     value.forEach((item) => {
-      const dateSecond = Date.parse(item.date);
+      const formattedDate = formatDate(item.date);
 
-      //formatando a data
-      const dateFormater = new Date(dateSecond).toLocaleDateString("pt-br", {
-        year: "numeric",
-        month: "short",
-        day: "2-digit",
-      });
-
-      //fazendo uma copia do array
-      let array = item;
       //criando um novo array com a data formatada
-      array.date = dateFormater;
+      item.date = formattedDate;
 
       //exibindo as informações no html
       const container = document.querySelector("[data-js=container]");
       const html = `
         <section class="c-card">
         <div class="c-card__header">
-          <p class="c-card__date">${array.date}</p>
+          <p class="c-card__date">${item.date}</p>
           <div class="c-card__icon">
           ${
-            array.like
+            item.like
               ? '<img src="./assets/heart.svg" alt="Curtir" />'
               : '<img src="./assets/heart-outlined.svg" alt="Curtir" />'
           }
@@ -81,9 +73,9 @@ function getLocalStorage() {
           </div>
           
           <div>
-          <h1 class="c-card__title">${array.title}</h1>
+          <h1 class="c-card__title">${item.title}</h1>
           <p class="c-card__description">
-          ${array.description}
+          ${item.description}
           </p>
           </div>
           </section>
@@ -94,3 +86,19 @@ function getLocalStorage() {
 }
 
 getLocalStorage();
+
+function formatDate(date) {
+  const value = new Date(date);
+
+  // transforma em segundos
+  const dateSecond = Date.parse(value);
+
+  // formata em pt-br
+  const dateFormater = new Date(dateSecond).toLocaleDateString("pt-br", {
+    year: "numeric",
+    month: "short",
+    day: "2-digit",
+  });
+
+  return dateFormater;
+}
