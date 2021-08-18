@@ -46,7 +46,7 @@
     </header>
 
     <main>
-      <div class="container">
+      <div class="container" data-js="container">
         <section class="c-card">
           <div class="c-card__header">
             <p class="c-card__date">02 de jul, 2021</p>
@@ -80,9 +80,11 @@
       <div class="c-modal__form container">
         <div class="c-modal__close" data-js="btnCloseModal"></div>
         <h2 class="c-modal__title">Adicionar um novo conteudo</h2>
-        <form action="">
+        <form action="" id="form">
           <div class="c-modal__group">
-            <label for="title" class="c-modal__label">Titulo</label>
+            <label for="title" class="c-modal__label" data-js="title"
+              >Titulo</label
+            >
             <input
               type="text"
               id="title"
@@ -109,7 +111,7 @@
               class="c-input__text-area"
             ></textarea>
           </div>
-          <button class="c-button">Salvar</button>
+          <button class="c-button" data-js="btnSave">Salvar</button>
         </form>
       </div>
     </div>
