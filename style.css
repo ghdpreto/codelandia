@@ -147,12 +147,6 @@
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-.visible {
-  visibility: visible;
-  opacity: 1;
-  transition: 200ms opacity;
-}
-
 .c-modal__form {
   border-radius: 0.5rem;
   padding: 2rem;
@@ -263,6 +257,7 @@
 }
 
 .c-empty {
+  visibility: hidden;
   margin: 0 auto;
   max-width: 26rem;
   padding: 1rem 0;
@@ -273,4 +268,10 @@
   color: var(--title-dark);
   text-align: center;
   margin-bottom: 1.2rem;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+  transition: 200ms opacity;
 }
