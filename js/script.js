@@ -69,7 +69,6 @@ function getLocalStorage() {
             let array = item
         //criando um novo array com a data formatada
         array.date = dateFormater
-        console.log(array)
 
         //exibindo as informações no html
         const container = document.querySelector('[data-js=container]')
@@ -78,7 +77,11 @@ function getLocalStorage() {
         <div class="c-card__header">
           <p class="c-card__date">${array.date}</p>
           <div class="c-card__icon">
-          <img src="./assets/heart-outlined.svg" alt="Curtir" />
+          ${
+            array.like? '<img src="./assets/heart.svg" alt="Curtir" />' : '<img src="./assets/heart-outlined.svg" alt="Curtir" />'
+          }
+        
+        
           </div>
           </div>
           
