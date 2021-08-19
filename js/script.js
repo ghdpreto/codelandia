@@ -3,6 +3,9 @@ const btnCloseModal = document.querySelector("[data-js = btnCloseModal");
 const btnSave = document.querySelector("[data-js = btnSave]");
 const modal = document.querySelector("[data-js = modal]");
 const container = document.querySelector("[data-js=container]");
+const inputSearch = document.querySelector("[data-js=inputSearch");
+const emptyImg = document.querySelector("[data-js=emptyImg]");
+let textSearch = "";
 
 btnOpenModal.addEventListener("click", () => {
   modal.classList.toggle("visible");
@@ -33,18 +36,43 @@ btnSave.addEventListener("click", (e) => {
   getLocalStorage();
 });
 
+inputSearch.addEventListener("keyup", (e) => {
+  let text = inputSearch.value;
+  let filtered = filterLocalStorage(text);
+
+  if (text.length === 0) {
+    return getLocalStorage();
+  }
+
+  if (filtered.length === 0) {
+    container.innerHTML = "";
+    notFoundImg(true);
+    console.log("aqui2");
+  } else {
+    container.innerHTML = "";
+    // desenhando os cards
+    filtered.forEach((item) => {
+      const formattedDate = formatDate(item.date);
+
+      //passando a data formatada para desenhar no card
+      item.date = formattedDate;
+
+      renderCard(item);
+    });
+  }
+});
+
 function getLocalStorage() {
   const value = JSON.parse(localStorage.getItem("codelandia"));
-  const emptyImg = document.querySelector("[data-js=emptyImg]");
 
   if (!value) {
-    emptyImg.classList.add("visible");
+    notFoundImg(true);
   } else {
-    if (emptyImg) {
-      // remove o retorno quando nao tem valores
-      emptyImg.parentNode.removeChild(emptyImg);
-    }
-
+    notFoundImg(false);
+    // if (emptyImg) {
+    //   // remove o retorno quando nao tem valores
+    // }
+    console.log("aqui");
     //remove os cards para gerar conforme a lista atualizada
     container.innerHTML = "";
 
@@ -75,6 +103,13 @@ function setLocalStorage(item) {
   localStorage.setItem("codelandia", JSON.stringify(listItem));
 }
 
+function filterLocalStorage(item) {
+  const listItem = JSON.parse(localStorage.getItem("codelandia"));
+
+  let filtered = listItem.filter((el) => el.title === item);
+  return filtered;
+}
+
 function renderCard(item) {
   //exibindo as informações no html
   const html = `
@@ -101,8 +136,6 @@ function renderCard(item) {
   container.innerHTML += html;
 }
 
-getLocalStorage();
-
 //### FUNCOES EXTRAS ###
 function orderDate(a, b) {
   return a.date < b.date;
@@ -123,3 +156,17 @@ function formatDate(date) {
 
   return dateFormater;
 }
+
+function notFoundImg(boolean) {
+  if (emptyImg) {
+    if (boolean) {
+      container.appendChild(emptyImg);
+      emptyImg.classList.add("visible");
+    } else {
+      container.removeChild(emptyImg);
+    }
+  }
+}
+
+//### INIT ###
+getLocalStorage();
